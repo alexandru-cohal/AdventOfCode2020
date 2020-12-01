@@ -4,16 +4,17 @@
 // - For running the solution of a specific puzzle from a specific day, you have to:
 //      - Change the header file
 //      - Change the function called from the 'main' function
+//      - Create the data structures needed to be provided as input to the functions called
 
 #include <iostream>
-#include "day1/day1puzzle1.h"
+#include "day1/day1puzzle2.h"
 
 int main()
 {
     vector<int> expenseArray;
-    readInputs(expenseArray);
+    readInputsDay1Puzzle2(expenseArray);
 
-    int sol = solveDay1Task1(expenseArray);
+    int sol = solveDay1Puzzle2(expenseArray);
 
     cout << sol;
 
