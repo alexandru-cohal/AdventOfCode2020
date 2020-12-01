@@ -145,6 +145,9 @@
   <ItemGroup>
     <ClInclude Include="day1\day1puzzle1.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="day1\input.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

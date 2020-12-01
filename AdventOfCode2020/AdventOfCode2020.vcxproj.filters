@@ -30,4 +30,9 @@
       <Filter>Day1</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="day1\input.txt">
+      <Filter>Day1</Filter>
+    </Text>
+  </ItemGroup>
 </Project>
