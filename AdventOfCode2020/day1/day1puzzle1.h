@@ -9,7 +9,7 @@ using namespace std;
 
 #define DESIRED_SUM_VALUE 2020
 
-void readInputs(vector<int> &expenseArray);
-int solveDay1Task1(vector<int> &expenseArray);
+void readInputsDay1Puzzle1(vector<int> &expenseArray);
+int solveDay1Puzzle1(vector<int> &expenseArray);
 
 #endif
