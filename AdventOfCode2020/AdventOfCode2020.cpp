@@ -7,14 +7,17 @@
 //      - Create the data structures needed to be provided as input to the functions called
 
 #include <iostream>
-#include "day1/day1puzzle2.h"
+#include "day2/day2puzzle1.h"
 
 int main()
 {
-    vector<int> expenseArray;
-    readInputsDay1Puzzle2(expenseArray);
+    vector<int> minOccurenceArray;
+    vector<int> maxOccurenceArray;
+    vector<string> letterArray;
+    vector<string> passwordArray;
+    readInputsDay2Puzzle1(minOccurenceArray, maxOccurenceArray, letterArray, passwordArray);
 
-    int sol = solveDay1Puzzle2(expenseArray);
+    int sol = solveDay2Puzzle1(minOccurenceArray, maxOccurenceArray, letterArray, passwordArray);
 
     cout << sol;
 

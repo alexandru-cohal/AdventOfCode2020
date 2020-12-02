@@ -142,13 +142,18 @@
     <ClCompile Include="AdventOfCode2020.cpp" />
     <ClCompile Include="day1\day1puzzle1.cpp" />
     <ClCompile Include="day1\day1puzzle2.cpp" />
+    <ClCompile Include="day2\day2puzzle1.cpp" />
+    <ClCompile Include="day2\day2puzzle2.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="day1\day1puzzle1.h" />
     <ClInclude Include="day1\day1puzzle2.h" />
+    <ClInclude Include="day2\day2puzzle1.h" />
+    <ClInclude Include="day2\day2puzzle2.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="day1\input.txt" />
+    <Text Include="day2\day2Input.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
