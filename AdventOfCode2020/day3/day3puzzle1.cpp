@@ -1,6 +1,6 @@
 #include "day3puzzle1.h"
 
-void mainDay3()
+void mainDay3Puzzle1()
 {
 	vector<string> map;
 	readInputsDay3Puzzle1(map);

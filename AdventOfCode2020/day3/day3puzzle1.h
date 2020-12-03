@@ -8,7 +8,7 @@
 
 using namespace std;
 
-void mainDay3();
+void mainDay3Puzzle1();
 void readInputsDay3Puzzle1(vector<string>& map);
 int solveDay3Puzzle1(vector<string>& map);
 
