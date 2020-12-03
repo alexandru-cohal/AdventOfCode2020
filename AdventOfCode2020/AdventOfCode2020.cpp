@@ -6,11 +6,11 @@
 //      - Change the function called from the 'main' function
 //      - Create the data structures needed to be provided as input to the functions called
 
-#include "day3/day3puzzle1.h"
+#include "day3/day3puzzle2.h"
 
 int main()
 {
-    mainDay3();
+    mainDay3Puzzle2();
 
     return 0;
 }
