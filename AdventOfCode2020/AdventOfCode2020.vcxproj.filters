@@ -67,14 +67,14 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="day1\input.txt">
-      <Filter>Day1</Filter>
-    </Text>
     <Text Include="day2\day2Input.txt">
       <Filter>Day2</Filter>
     </Text>
     <Text Include="day3\day3Input.txt">
       <Filter>Day3</Filter>
+    </Text>
+    <Text Include="day1\day1Input.txt">
+      <Filter>Day1</Filter>
     </Text>
   </ItemGroup>
 </Project>

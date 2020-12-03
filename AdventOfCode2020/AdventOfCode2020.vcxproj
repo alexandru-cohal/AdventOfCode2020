@@ -156,7 +156,7 @@
     <ClInclude Include="day3\day3puzzle2.h" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="day1\input.txt" />
+    <Text Include="day1\day1Input.txt" />
     <Text Include="day2\day2Input.txt" />
     <Text Include="day3\day3Input.txt" />
   </ItemGroup>

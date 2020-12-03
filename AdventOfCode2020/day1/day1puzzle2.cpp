@@ -1,8 +1,16 @@
 #include "day1puzzle2.h"
 
+void mainDay1Puzzle2()
+{
+	vector<int> expenseArray;
+	readInputsDay1Puzzle2(expenseArray);
+
+	cout << solveDay1Puzzle2(expenseArray);
+}
+
 void readInputsDay1Puzzle2(vector<int>& expenseArray)
 {
-	string filename = "day1/input.txt";
+	string filename = "day1/day1Input.txt";
 	ifstream inFile(filename);
 
 	if (inFile.is_open())
