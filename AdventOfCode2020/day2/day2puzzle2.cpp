@@ -1,5 +1,16 @@
 #include "day2puzzle2.h"
 
+void mainDay2Puzzle2()
+{
+	vector<int> charIndex1Array;
+	vector<int> charIndex2Array;
+	vector<string> letterArray;
+	vector<string> passwordArray;
+	readInputsDay2Puzzle2(charIndex1Array, charIndex2Array, letterArray, passwordArray);
+
+	cout << solveDay2Puzzle2(charIndex1Array, charIndex2Array, letterArray, passwordArray);
+}
+
 void readInputsDay2Puzzle2(vector<int>& charIndex1Array,
 							vector<int>& charIndex2Array,
 							vector<string>& letterArray,

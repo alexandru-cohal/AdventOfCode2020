@@ -4,8 +4,11 @@
 #include <fstream>
 #include <string>
 #include <vector>
+#include <iostream>
 
 using namespace std;
+
+void mainDay2Puzzle2();
 
 void readInputsDay2Puzzle2(vector<int>& charIndex1Array,
 							vector<int>& charIndex2Array,

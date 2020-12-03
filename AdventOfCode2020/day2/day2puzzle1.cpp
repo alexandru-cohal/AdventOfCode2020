@@ -1,5 +1,16 @@
 #include "day2puzzle1.h"
 
+void mainDay2Puzzle1()
+{
+	vector<int> minOccurenceArray;
+	vector<int> maxOccurenceArray;
+	vector<string> letterArray;
+	vector<string> passwordArray;	    
+	readInputsDay2Puzzle1(minOccurenceArray, maxOccurenceArray, letterArray, passwordArray);
+
+	cout << solveDay2Puzzle1(minOccurenceArray, maxOccurenceArray, letterArray, passwordArray);
+}
+
 void readInputsDay2Puzzle1(vector<int>& minOccurenceArray,
 							vector<int>& maxOccurenceArray,
 							vector<string>& letterArray,

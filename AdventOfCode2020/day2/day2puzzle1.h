@@ -4,8 +4,11 @@
 #include <fstream>
 #include <string>
 #include <vector>
+#include <iostream>
 
 using namespace std;
+
+void mainDay2Puzzle1();
 
 void readInputsDay2Puzzle1(vector<int> &minOccurenceArray,
 							vector<int> &maxOccurenceArray,
