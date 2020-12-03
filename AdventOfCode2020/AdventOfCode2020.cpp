@@ -6,20 +6,11 @@
 //      - Change the function called from the 'main' function
 //      - Create the data structures needed to be provided as input to the functions called
 
-#include <iostream>
-#include "day2/day2puzzle2.h"
+#include "day3/day3puzzle1.h"
 
 int main()
 {
-    vector<int> charIndex1Array;
-    vector<int> charIndex2Array;
-    vector<string> letterArray;
-    vector<string> passwordArray;
-    readInputsDay2Puzzle2(charIndex1Array, charIndex2Array, letterArray, passwordArray);
-
-    int sol = solveDay2Puzzle2(charIndex1Array, charIndex2Array, letterArray, passwordArray);
-
-    cout << sol;
+    mainDay3();
 
     return 0;
 }
