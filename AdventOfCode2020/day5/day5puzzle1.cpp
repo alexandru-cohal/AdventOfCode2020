@@ -31,8 +31,8 @@ int solveDay5Puzzle1(vector<string> boardingPassArray)
 
 	for (int indexBoardingPass = 0; indexBoardingPass < (int)boardingPassArray.size(); indexBoardingPass++)
 	{
-		int row = calculatePosition(boardingPassArray[indexBoardingPass].substr(0, 7));
-		int column = calculatePosition(boardingPassArray[indexBoardingPass].substr(7, 3));
+		int row = calculatePositionPuzzle1(boardingPassArray[indexBoardingPass].substr(0, 7));
+		int column = calculatePositionPuzzle1(boardingPassArray[indexBoardingPass].substr(7, 3));
 		int id = row * 8 + column;
 
 		maxId = max(maxId, id);
@@ -41,7 +41,7 @@ int solveDay5Puzzle1(vector<string> boardingPassArray)
 	return maxId;
 }
 
-int calculatePosition(string sequence)
+int calculatePositionPuzzle1(string sequence)
 {
 	int left = 0;
 	int right;

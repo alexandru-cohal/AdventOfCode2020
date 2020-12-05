@@ -11,6 +11,6 @@ using namespace std;
 void mainDay5Puzzle1();
 void readInputsDay5Puzzle1(vector<string>& boardingPassArray);
 int solveDay5Puzzle1(vector<string> boardingPassArray);
-int calculatePosition(string sequence);
+int calculatePositionPuzzle1(string sequence);
 
 #endif
