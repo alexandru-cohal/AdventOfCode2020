@@ -33,7 +33,6 @@ void readInputsDay8Puzzle1(vector<line_T>& program)
 
 int solveDay8Puzzle1(vector<line_T> program)
 {
-	const int numProgramLine = program.size();
 	vector<bool> visitedLine(program.size(), false);
 
 	int accValue = 0;
