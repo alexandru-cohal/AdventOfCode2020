@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AdventOfCode2020.cpp" />
+    <ClCompile Include="day10\day10puzzle1.cpp" />
     <ClCompile Include="day1\day1puzzle1.cpp" />
     <ClCompile Include="day1\day1puzzle2.cpp" />
     <ClCompile Include="day2\day2puzzle1.cpp" />
@@ -160,6 +161,7 @@
     <ClCompile Include="day9\day9puzzle2.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="day10\day10puzzle1.h" />
     <ClInclude Include="day1\day1puzzle1.h" />
     <ClInclude Include="day1\day1puzzle2.h" />
     <ClInclude Include="day2\day2puzzle1.h" />
@@ -180,6 +182,7 @@
     <ClInclude Include="day9\day9puzzle2.h" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="day10\day10Input.txt" />
     <Text Include="day1\day1Input.txt" />
     <Text Include="day2\day2Input.txt" />
     <Text Include="day3\day3Input.txt" />
