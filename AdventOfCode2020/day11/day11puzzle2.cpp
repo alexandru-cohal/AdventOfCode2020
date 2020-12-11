@@ -58,21 +58,6 @@ int solveDay11Puzzle2(vector<vector<elem_T>> layout)
 	return numOccupied;
 }
 
-void countEmptyAndOccupiedPuzzle2(vector<vector<elem_T>> layout, int row, int col, int& numEmpty, int& numOccupied)
-{
-	for (int indexNeighbour = 0; indexNeighbour < 8; indexNeighbour++)
-	{
-		if (layout[row][col].neighbours[indexNeighbour] == 'L')
-		{
-			numEmpty++;
-		}
-		else if (layout[row][col].neighbours[indexNeighbour] == '#')
-		{
-			numOccupied++;
-		}
-	}
-}
-
 void updateNeighboursPuzzle2(vector<vector<elem_T>>& layout)
 {
 	vector<int> rowStep{ 0, -1, -1, -1, 0, 1, 1, 1};
@@ -152,15 +137,13 @@ void updateNeighboursPuzzle2(vector<vector<elem_T>>& layout)
 bool updateTypePuzzle2(vector<vector<elem_T>>& layout)
 {
 	bool flagChange = false;
-	int numEmpty, numOccupied;
+	int numOccupied;
 
 	for (int indexRow = 0; indexRow < (int)layout.size(); indexRow++)
 	{
 		for (int indexCol = 0; indexCol < (int)layout[0].size(); indexCol++)
 		{
-			numEmpty = 0;
-			numOccupied = 0;
-			countEmptyAndOccupiedPuzzle2(layout, indexRow, indexCol, numEmpty, numOccupied);
+			numOccupied = count(layout[indexRow][indexCol].neighbours.begin(), layout[indexRow][indexCol].neighbours.end(), '#');
 
 			if (layout[indexRow][indexCol].type == 'L' && numOccupied == 0)
 			{
