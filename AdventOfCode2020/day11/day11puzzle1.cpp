@@ -47,7 +47,7 @@ int solveDay11Puzzle1(vector<string> layout)
 	vector<int> rowStep{1, 0, -1, -1, -1, 0, 1, 1};
 	vector<int> colStep{ -1, -1, -1, 0, 1, 1, 1, 0 };
 	bool flagChange = true;
-	int numEmpty, numOccupied;
+	int numOccupied;
 
 	while (flagChange)
 	{
@@ -58,17 +58,12 @@ int solveDay11Puzzle1(vector<string> layout)
 		{
 			for (int indexCol = 1; indexCol < layout[0].size() - 1; indexCol++)
 			{
-				numEmpty = 0;
 				numOccupied = 0;
 
 				// Check all the 8 neighbours and count how many are occupied seats and how many are unoccupied seats
 				for (int indexStep = 0; indexStep < 8; indexStep++)
 				{
-					if (layout[indexRow + rowStep[indexStep]][indexCol + colStep[indexStep]] == 'L')
-					{
-						numEmpty++;
-					}
-					else if (layout[indexRow + rowStep[indexStep]][indexCol + colStep[indexStep]] == '#')
+					if (layout[indexRow + rowStep[indexStep]][indexCol + colStep[indexStep]] == '#')
 					{
 						numOccupied++;
 					}
@@ -95,18 +90,18 @@ int solveDay11Puzzle1(vector<string> layout)
 		layout = layoutNew;
 	}
 
-	// Count how many unoccupied seats are in the last layout
-	numEmpty = 0;
+	// Count how many occupied seats are in the last layout
+	numOccupied = 0;
 	for (int indexRow = 1; indexRow < layout.size() - 1; indexRow++)
 	{
 		for (int indexCol = 1; indexCol < layout[0].size() - 1; indexCol++)
 		{
 			if (layout[indexRow][indexCol] == '#')
 			{
-				numEmpty++;
+				numOccupied++;
 			}
 		}
 	}
 
-	return numEmpty;
+	return numOccupied;
 }
