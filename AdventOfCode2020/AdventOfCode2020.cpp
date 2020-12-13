@@ -5,11 +5,11 @@
 //      - Change the header file (e.g. #include "day3/day3puzzle2.h")
 //      - Change the function called from the 'main' function (e.g. mainDay3Puzzle2();)
 
-#include "day13/day13puzzle1.h"
+#include "day13/day13puzzle2.h"
 
 int main()
 {
-    mainDay13Puzzle1();
+    mainDay13Puzzle2();
 
     return 0;
 }
