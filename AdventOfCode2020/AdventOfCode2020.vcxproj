@@ -146,6 +146,7 @@
     <ClCompile Include="day11\day11puzzle2.cpp" />
     <ClCompile Include="day12\day12puzzle1.cpp" />
     <ClCompile Include="day12\day12puzzle2.cpp" />
+    <ClCompile Include="day13\day13puzzle1.cpp" />
     <ClCompile Include="day1\day1puzzle1.cpp" />
     <ClCompile Include="day1\day1puzzle2.cpp" />
     <ClCompile Include="day2\day2puzzle1.cpp" />
@@ -172,6 +173,7 @@
     <ClInclude Include="day11\day11puzzle2.h" />
     <ClInclude Include="day12\day12puzzle1.h" />
     <ClInclude Include="day12\day12puzzle2.h" />
+    <ClInclude Include="day13\day13puzzle1.h" />
     <ClInclude Include="day1\day1puzzle1.h" />
     <ClInclude Include="day1\day1puzzle2.h" />
     <ClInclude Include="day2\day2puzzle1.h" />
@@ -195,6 +197,7 @@
     <Text Include="day10\day10Input.txt" />
     <Text Include="day11\day11Input.txt" />
     <Text Include="day12\day12Input.txt" />
+    <Text Include="day13\day13Input.txt" />
     <Text Include="day1\day1Input.txt" />
     <Text Include="day2\day2Input.txt" />
     <Text Include="day3\day3Input.txt" />
