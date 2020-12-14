@@ -141,6 +141,9 @@
     <ClCompile Include="day14\day14puzzle1.cpp">
       <Filter>Day14</Filter>
     </ClCompile>
+    <ClCompile Include="day14\day14puzzle2.cpp">
+      <Filter>Day14</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="day1\day1puzzle1.h">
@@ -222,6 +225,9 @@
       <Filter>Day13</Filter>
     </ClInclude>
     <ClInclude Include="day14\day14puzzle1.h">
+      <Filter>Day14</Filter>
+    </ClInclude>
+    <ClInclude Include="day14\day14puzzle2.h">
       <Filter>Day14</Filter>
     </ClInclude>
   </ItemGroup>
