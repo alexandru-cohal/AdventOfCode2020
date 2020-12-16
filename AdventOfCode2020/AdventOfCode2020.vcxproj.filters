@@ -58,6 +58,9 @@
     <Filter Include="Day15">
       <UniqueIdentifier>{d981e48a-ddaa-490a-ab2a-3e193d27447d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Day16">
+      <UniqueIdentifier>{6320bca3-1ab4-4e8c-aab2-3b754105b03f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AdventOfCode2020.cpp">
@@ -153,6 +156,9 @@
     <ClCompile Include="day15\day15puzzle2.cpp">
       <Filter>Day15</Filter>
     </ClCompile>
+    <ClCompile Include="day16\day16puzzle1.cpp">
+      <Filter>Day16</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="day1\day1puzzle1.h">
@@ -245,6 +251,9 @@
     <ClInclude Include="day15\day15puzzle2.h">
       <Filter>Day15</Filter>
     </ClInclude>
+    <ClInclude Include="day16\day16puzzle1.h">
+      <Filter>Day16</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="day2\day2Input.txt">
@@ -291,6 +300,9 @@
     </Text>
     <Text Include="day15\day15Input.txt">
       <Filter>Day15</Filter>
+    </Text>
+    <Text Include="day16\day16Input.txt">
+      <Filter>Day16</Filter>
     </Text>
   </ItemGroup>
 </Project>
