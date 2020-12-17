@@ -14,6 +14,7 @@ using namespace std;
 void mainDay17Puzzle1();
 void readInputsDay17Puzzle1(char cubesSet[MAXSIZE][MAXSIZE][MAXSIZE]);
 int countActiveNeighbDay17Puzzle1(int indexDim, int indexRow, int indexCol, char cubesSet[MAXSIZE][MAXSIZE][MAXSIZE]);
+void copyCubesSetDay17Puzzle1(char cubesSetNew[MAXSIZE][MAXSIZE][MAXSIZE], char cubesSet[MAXSIZE][MAXSIZE][MAXSIZE]);
 int solveDay17Puzzle1(char cubesSet[MAXSIZE][MAXSIZE][MAXSIZE]);
 
 #endif
