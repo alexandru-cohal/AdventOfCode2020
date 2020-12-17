@@ -137,80 +137,82 @@ long long solveDay16Puzzle2(vector<rule_T> ruleList,
 	// Add to the nearby ticket list your ticket for simplicity later on
 	nearbyTicketList.push_back(yourTicket);
 
-	// Generate the first configuration (i.e. [0, 1, 2, ... yourTicket.size() - 1])
-	vector<int> config; // configurationField[i] = the field index (i.e. the rule index) for the i-th element of a ticket
-	for (int indexConfigElem = 0; indexConfigElem < (int)yourTicket.values.size(); indexConfigElem++)
+	// Determine all the fields options for each value based on the rules
+	vector<valueOption_T> optionsValues;
+	// Iterate over all the tickets' values
+	for (int indexValue = 0; indexValue < (int)yourTicket.values.size(); indexValue++)
 	{
-		config.push_back(indexConfigElem);
-	}
+		optionsValues.push_back(valueOption_T{});
+		optionsValues[indexValue].index = indexValue;
 
-	// Find the valid configuration
-	bool flagConfigOK = false;
+		// Iterate over all the rules
+		for (int indexRule = 0; indexRule < (int)ruleList.size(); indexRule++)
+		{
+			bool flagRuleOK = true;
 
-	while (true)
-	{
-		if (testConfigDay16Puzzle2(config, ruleList, nearbyTicketList))
-		{
-			// Valid configuration
-			break;
-		}
-		else
-		{
-			// Invalid confugration
-			// Generate the next permutation
-			if (!next_permutation(config.begin(), config.end()))
+			// Iterate over all the tickets
+			for (int indexTicket = 0; indexTicket < (int)nearbyTicketList.size(); indexTicket++)
 			{
-				// If all permutations were checked and the initial one was reached => Return -1
-				return -1;
-			}
-		}
-	}
-
-	// Get the final result
-	long long multiplicationResult = 1;
-	// Iterate over all the rules
-	for (int indexRule = 0; indexRule < (int)ruleList.size(); indexRule++)
-	{
-		// If the rule field name starts with the word "departure"
-		if (ruleList[indexRule].field.substr(0, 9) == "departure")
-		{
-			// Find the element in the configuration which has the associated field index equal with the current rule index
-			int indexConfigElem;
-			for (indexConfigElem = 0; indexConfigElem < (int)config.size(); indexConfigElem++)
-			{
-				if (config[indexConfigElem] == indexRule)
+				if (!((ruleList[indexRule].interv1.min <= nearbyTicketList[indexTicket].values[indexValue] &&
+					ruleList[indexRule].interv1.max >= nearbyTicketList[indexTicket].values[indexValue]) ||
+					(ruleList[indexRule].interv2.min <= nearbyTicketList[indexTicket].values[indexValue] &&
+					ruleList[indexRule].interv2.max >= nearbyTicketList[indexTicket].values[indexValue])))
 				{
+					flagRuleOK = false;
 					break;
 				}
 			}
 
-			multiplicationResult *= yourTicket.values[indexConfigElem];
-		}
-	}
-
-	return multiplicationResult;
-}
-
-bool testConfigDay16Puzzle2(vector<int> config,
-				vector<rule_T> ruleList,
-				vector<ticket_T> ticketList)
-{
-	// Iterate over all the tickets
-	for (int indexTicket = 0; indexTicket < (int)ticketList.size(); indexTicket++)
-	{
-		// Iterate over all the ticket's values
-		for (int indexValue = 0; indexValue < (int)ticketList[0].values.size(); indexValue++)
-		{
-			// Check if the value respects the rule chosen in the configuration for that value index
-			if (!((ruleList[config[indexValue]].interv1.min <= ticketList[indexTicket].values[indexValue] &&
-				   ruleList[config[indexValue]].interv1.max >= ticketList[indexTicket].values[indexValue]) ||
-				  (ruleList[config[indexValue]].interv2.min <= ticketList[indexTicket].values[indexValue] &&
-				   ruleList[config[indexValue]].interv2.max >= ticketList[indexTicket].values[indexValue])))
+			if (flagRuleOK)
 			{
-				return false;
+				optionsValues[indexValue].optionList.push_back(indexRule);
 			}
 		}
 	}
 
-	return true;
+	// Sort the values based on the number of options
+	sort(optionsValues.begin(), optionsValues.end(), compareValueOptionT);
+
+	// Choose an option for each value
+	set<int> usedOption;
+	vector<int> fieldIndexToValueIndex(ruleList.size(), 0);
+	for (int indexValue = 0; indexValue < (int)yourTicket.values.size(); indexValue++)
+	{
+		for (int indexOption = 0; indexOption < (int)optionsValues[indexValue].optionList.size(); indexOption++)
+		{
+			auto findOption = usedOption.find(optionsValues[indexValue].optionList[indexOption]);
+			if (findOption != usedOption.end())
+			{
+				optionsValues[indexValue].optionList.erase(optionsValues[indexValue].optionList.begin() + indexOption);
+				indexOption--;
+			}
+		}
+
+		if (optionsValues[indexValue].optionList.size() == 1)
+		{
+			usedOption.insert(optionsValues[indexValue].optionList[0]);
+			fieldIndexToValueIndex[optionsValues[indexValue].optionList[0]] = optionsValues[indexValue].index;
+		}
+		else
+		{
+			int t = 0;
+		}
+	}
+
+	// Calculate the solution
+	long long multiplSol = 1;
+	for (int indexRule = 0; indexRule < (int)ruleList.size(); indexRule++)
+	{
+		if (ruleList[indexRule].field.substr(0, 9) == "departure")
+		{
+			multiplSol *= yourTicket.values[fieldIndexToValueIndex[indexRule]];
+		}
+	}
+
+	return multiplSol;
+}
+
+bool compareValueOptionT(valueOption_T vp1, valueOption_T vp2)
+{
+	return vp1.optionList.size() < vp2.optionList.size();
 }

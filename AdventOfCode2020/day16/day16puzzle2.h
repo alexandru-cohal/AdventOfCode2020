@@ -6,6 +6,7 @@
 #include <string>
 #include <vector>
 #include <algorithm>
+#include <set>
 
 using namespace std;
 
@@ -27,6 +28,12 @@ typedef struct ticket
 	vector<int> values;
 } ticket_T;
 
+typedef struct valueOption
+{
+	int index;
+	vector<int> optionList;
+} valueOption_T;
+
 void mainDay16Puzzle2();
 void readInputsDay16Puzzle2(vector<rule_T>& ruleList,
 							ticket_T& yourTicket,
@@ -36,8 +43,6 @@ void eliminateInvalidTicketsPuzzle2(vector<rule_T> ruleList,
 long long solveDay16Puzzle2(vector<rule_T> ruleList,
 							ticket_T yourTicket,
 							vector<ticket_T> nearbyTicketList);
-bool testConfigDay16Puzzle2(vector<int> config,
-							vector<rule_T> ruleList,
-							vector<ticket_T> ticketList);
+bool compareValueOptionT(valueOption_T vp1, valueOption_T vp2);
 
 #endif
