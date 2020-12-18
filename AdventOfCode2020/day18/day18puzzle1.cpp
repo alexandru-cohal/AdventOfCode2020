@@ -17,6 +17,7 @@ long long readInputsAndSolveDay18Puzzle1()
 	{
 		line += " ";
 		sumExpr += evaluateExpressionDay18Puzzle1(line);
+		// Based on the solution from https://stackoverflow.com/questions/9329406/evaluating-arithmetic-expressions-from-string-in-c
 	}
 
 	inFile.close();
