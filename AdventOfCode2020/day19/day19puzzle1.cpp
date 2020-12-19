@@ -7,7 +7,7 @@ void mainDay19Puzzle1()
 	readInputsDay19Puzzle1(rule, receivedMsgs);
 
 	map<int, vector<string>> ruleMsgs;
-	solveRule(rule, 0, ruleMsgs);
+	solveRuleDay19Puzzle1(rule, 0, ruleMsgs);
 
 	cout << solveDay19Puzzle1(ruleMsgs[0], receivedMsgs);
 }
@@ -41,7 +41,7 @@ void readInputsDay19Puzzle1(map<int, string>& rule, vector<string>& receivedMsgs
 	inFile.close();
 }
 
-void solveRule(map<int, string>& rule, int indexQueryRule, map<int, vector<string>>& ruleMsgs)
+void solveRuleDay19Puzzle1(map<int, string>& rule, int indexQueryRule, map<int, vector<string>>& ruleMsgs)
 {
 	vector<string> queryRuleMsgsPart1;
 
@@ -69,7 +69,7 @@ void solveRule(map<int, string>& rule, int indexQueryRule, map<int, vector<strin
 					// Check if the indexSubrule wasn't already processed
 					if (rule[indexSubrule].size() > 0)
 					{
-						solveRule(rule, indexSubrule, ruleMsgs);
+						solveRuleDay19Puzzle1(rule, indexSubrule, ruleMsgs);
 					}
 
 					if (queryRuleMsgsPart1.size() == 0)
@@ -79,9 +79,9 @@ void solveRule(map<int, string>& rule, int indexQueryRule, map<int, vector<strin
 					else
 					{
 						vector<string> queryRuleMsgsPart1New;
-						for (int indexQueryRuleMsgsPart1 = 0; indexQueryRuleMsgsPart1 < queryRuleMsgsPart1.size(); indexQueryRuleMsgsPart1++)
+						for (int indexQueryRuleMsgsPart1 = 0; indexQueryRuleMsgsPart1 < (int)queryRuleMsgsPart1.size(); indexQueryRuleMsgsPart1++)
 						{
-							for (int indexSubruleMsgs = 0; indexSubruleMsgs < ruleMsgs[indexSubrule].size(); indexSubruleMsgs++)
+							for (int indexSubruleMsgs = 0; indexSubruleMsgs < (int)ruleMsgs[indexSubrule].size(); indexSubruleMsgs++)
 							{
 								queryRuleMsgsPart1New.push_back(queryRuleMsgsPart1[indexQueryRuleMsgsPart1] + ruleMsgs[indexSubrule][indexSubruleMsgs]);
 							}
