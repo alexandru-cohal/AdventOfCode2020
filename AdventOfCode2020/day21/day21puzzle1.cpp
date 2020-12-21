@@ -69,7 +69,7 @@ void readInputsDay21Puzzle1(vector<food_T>& foodList, set<string>& allergensSet)
 	inFile.close();
 }
 
-long long solveDay21Puzzle1(vector<food_T> foodList, set<string> allergensSet)
+int solveDay21Puzzle1(vector<food_T> foodList, set<string> allergensSet)
 {
 	// Create the "allergen2Ingredients" set which contains for each allergen all the possible ingredients which can contain it
 	map<string, set<string>> allergen2Ingredients;

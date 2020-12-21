@@ -19,6 +19,6 @@ typedef struct food
 
 void mainDay21Puzzle1();
 void readInputsDay21Puzzle1(vector<food_T>& foodList, set<string>& allergensSet);
-long long solveDay21Puzzle1(vector<food_T> foodList, set<string> allergensSet);
+int solveDay21Puzzle1(vector<food_T> foodList, set<string> allergensSet);
 
 #endif
